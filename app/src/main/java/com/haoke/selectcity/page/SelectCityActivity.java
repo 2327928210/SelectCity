@@ -69,12 +69,14 @@ public class SelectCityActivity extends AppCompatActivity {
     private ListView searchListView;
     private List<SelectCityBean> searchDatas;
     private EditText editText;
+    private View search_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_city);
         mContext = this;
+        search_view=findViewById(R.id.search_view);
         editText = (EditText) findViewById(R.id.searchView);
         searchListView = (ListView) findViewById(R.id.listView);
         mRv = (RecyclerView) findViewById(R.id.rv);
@@ -180,7 +182,7 @@ public class SelectCityActivity extends AppCompatActivity {
                 Log.d("cityss", "-------------");
                 if (editText.getText().toString().trim().equals("")) {
 //                    searchDatas.clear();
-                    searchListView.setVisibility(View.GONE);
+                    search_view.setVisibility(View.GONE);
 //                    searchCityAdapter.notifyDataSetChanged();
                 } else {
                     if (mBodyDatas != null) {
@@ -193,10 +195,10 @@ public class SelectCityActivity extends AppCompatActivity {
                         }
                         Log.d("cityss", "--2-----------");
                         if (searchDatas.size() > 0) {
-                            searchListView.setVisibility(View.VISIBLE);
+                            search_view.setVisibility(View.VISIBLE);
                             searchCityAdapter.notifyDataSetChanged();
                         } else {
-                            searchListView.setVisibility(View.GONE);
+                            search_view.setVisibility(View.GONE);
                         }
                     }
                 }
@@ -206,7 +208,7 @@ public class SelectCityActivity extends AppCompatActivity {
         searchListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                searchListView.setVisibility(View.GONE);
+                search_view.setVisibility(View.GONE);
                 finish();
                 overridePendingTransition(R.anim.bottom_silent,R.anim.bottom_out);
             }

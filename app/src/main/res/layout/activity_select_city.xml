@@ -27,13 +27,11 @@
 
     <com.mcxtzhang.indexlib.IndexBar.widget.IndexBar
         android:id="@+id/indexBar"
-        android:layout_below="@+id/search_rl"
         android:layout_width="24dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_gravity="right"
-        android:paddingTop="8dp"
         app:indexBarPressBackground="#00ffffff"
         app:indexBarTextSize="10sp" />
 
@@ -51,13 +49,25 @@
         tools:text="A"
         tools:visibility="visible" />
 
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:id="@+id/search_view"
         android:layout_below="@+id/search_rl"
-        android:background="#ffffff"
-        android:visibility="gone"></ListView>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="#77000000"
+            />
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+          ></ListView>
+    </RelativeLayout>
+
 
 </RelativeLayout>

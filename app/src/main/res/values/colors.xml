@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_LAN">#3285FF</color>
+    <color name="color_city">#eeeeee</color>
+    <color name="color_city_black">#000000</color>
+    <color name="partTranslucent">#39000000</color>
+</resources>
